@@ -21,5 +21,6 @@ html = etree.HTML(r.text)
 img_urls = html.xpath('.//img/@src')#先找到所有的img
 i=0
 for img_url in img_urls:
-    urllib.urlretrieve(img_url,'img'+str(i)+'.jpg',Schedule)
+    urllib.request.urlretrieve('http:'+img_url,'img'+str(i)+'.jpg',Schedule)
+    #2019.11.09在查询该网站时已经将图片地址进行修饰隐藏，缺少"http:"字符串;而且python3中将urlretrieve已经移到urllib.request下面. --Carey          
     i+=1
