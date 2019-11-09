@@ -18,4 +18,4 @@ for mulu in soup.find_all(class_="mulu"):
             list.append({'href':href,'box_title':box_title})
         content.append({'title':h2_title,'content':list})
 with open('qiye.json','w') as fp:
-    json.dump(content,fp=fp,indent=4)
+    json.dump(content,fp=fp,indent=4,ensure_ascii=False)#添加ensur_ascii字段是为了能够在json文本中正常显示文字，而非"\uXXXX"  --Carey
